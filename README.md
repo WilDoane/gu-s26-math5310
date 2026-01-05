@@ -23,11 +23,12 @@ From your CLI
   git config --global user.email wd394@georgetown.edu
 
   # You might wish to create or already have a preferred parent directory
-  git clone git@github.com:WilDoane/gu-s26-math5310.git
+  git clone https://github.com/WilDoane/gu-s26-math5310.git
 
   cd gu-s26-math5310
   git pull
   
+  podman machine start
   . ./build.sh
   
   podman images
@@ -43,7 +44,9 @@ From your CLI
   
   . ./run.sh
 
-  Visit the URL offered (with the token)
+  # Visit the URL offered (along with the token)
+  
+  # CTRL-C to terminate session
   
   podman machine stop
 ```    
