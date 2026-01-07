@@ -1,3 +1,7 @@
+# Local file storage
+workspace/*
+!workspace/hello-world.ipynb
+
 # MacOS directory metadata
 **/.DS_Store
 
