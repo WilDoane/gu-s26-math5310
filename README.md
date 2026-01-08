@@ -15,23 +15,28 @@ From your CLI
 ```
   # One-time Setup
   
+  podman machine list     # optional to see there's no default machine
   podman machine init     # one-time step
-  podman machine list     # optional
+  podman machine list     # optional to confirm the machine creation
 
-  # Use your name and NetID  
-  git config --global user.name 'William Doane'
-  git config --global user.email wd394@georgetown.edu
+  # Use your name and GU NetID  
+  git config --global user.name 'Your Name'
+  git config --global user.email your_netid@georgetown.edu
 
   # You might wish to create or already have a preferred parent directory
+  # If so, CD into that directory now
+
   git clone https://github.com/WilDoane/gu-s26-math5310.git
 
   cd gu-s26-math5310
-  git pull
+
+  podman images # to see there are no images yet
   
   podman machine start
+
   . ./build.sh
   
-  podman images
+  podman images # to see the downloaded and built images
 ```
 
 # Typical Work Session
