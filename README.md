@@ -10,8 +10,13 @@ Install Git
 
 Install Podman
   https://podman.io/
+
+(Windows Only): Install Windows Subsystem for Linux (WSL)
+  * Open PowerShell as Administrator
+    * Start > "Powershell" > click As Administrator...
+  * wsl --install
   
-From your CLI
+From your CLI (Terminal, term, iTerm, WSL, ...)
 ```
   # One-time Setup
   
@@ -41,6 +46,7 @@ From your CLI
 
 # Typical Work Session
   
+From your CLI
 ```
   podman machine start
   
