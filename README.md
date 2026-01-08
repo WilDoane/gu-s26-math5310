@@ -11,6 +11,12 @@ Install Git
 Install Podman
   https://podman.io/
 
+Install a programmer's text editor
+  * Mac: BBEdit
+  * Windows: Notepad++  
+  * Linux: Geany
+  * Any OS: VSCode  https://code.visualstudio.com/download
+
 (Windows Only): Install Windows Subsystem for Linux (WSL)
   * Open PowerShell as Administrator
     * Start > "Powershell" > click As Administrator...
