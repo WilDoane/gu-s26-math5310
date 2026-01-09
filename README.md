@@ -83,7 +83,7 @@ From your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
 ```
 podman machine start
 podman image rm -f dl-cpu
-podman image rm python3.11
+podman image rm docker.io/python
 podman machine stop
 podman machine rm podman-machine-default
 ```
