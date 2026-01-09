@@ -21,11 +21,14 @@ Install a programmer's text editor
   * Open PowerShell as Administrator
     * Start > "Powershell" > click As Administrator...
   * wsl --install
-  
-From your CLI (Terminal, term, iTerm, WSL, ...)
+  * Close Powershell
+  * Launch WSL
+    * Start > "WSL"
+
+# One-time Setup
+
+Then, for all systems, from your CLI (Terminal, term, iTerm, WSL, ...)
 ```
-  # One-time Setup
-  
   podman machine list     # optional to see there's no default machine
   podman machine init     # one-time step
   podman machine list     # optional to confirm the machine creation
@@ -45,21 +48,21 @@ From your CLI (Terminal, term, iTerm, WSL, ...)
   
   podman machine start
 
-  . ./build.sh
+  sed 's/\r$//' build.sh | . /dev/stdin
   
   podman images # to see the downloaded and built images
 ```
 
 # Typical Work Session
   
-From your CLI
+From your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
 ```
   podman machine start
   
   cd gu-s26-math5310
   git pull
   
-  . ./run.sh
+  sed 's/\r$//' run.sh | . /dev/stdin
 
   # Visit the URL offered (along with the token)
   
