@@ -72,3 +72,20 @@ From your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
   podman machine stop
 ```    
   
+# Clean Up
+
+In the event you want to remove this setup completely:
+
+From your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
+```
+podman machine start
+podman image rm -f dl-cpu
+podman image rm python3.11
+podman machine stop
+podman machine rm podman-machine-default
+```
+
+Then, use your OS's method for uninstalling git and podman (e.g., on Windows, Start > Add or Remove Programs).
+
+If you want to remove traces of this repository from your system, you would also need to delete the cloned directory: gu-s26-math5310.
+
