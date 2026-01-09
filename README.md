@@ -36,6 +36,7 @@ Then, for all systems, from your CLI (Terminal, term, iTerm, WSL, ... *not* Powe
   # Use your name and GU NetID  
   git config --global user.name 'Your Name'
   git config --global user.email your_netid@georgetown.edu
+  git config --global core.autocrlf input
 
   # You might wish to create or already have a preferred parent directory
   # If so, CD into that directory now
