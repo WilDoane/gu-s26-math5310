@@ -19,7 +19,7 @@ Install a programmer's text editor
 
 (Windows Only): Install Windows Subsystem for Linux (WSL)
   * Open PowerShell as Administrator
-    * Start > "Powershell" > click As Administrator...
+    * Start > "Powershell" > click "Run As Administrator..."
   * wsl --install
   * Close Powershell
   * Launch WSL
