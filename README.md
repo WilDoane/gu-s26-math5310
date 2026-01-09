@@ -27,7 +27,7 @@ Install a programmer's text editor
 
 # One-time Setup
 
-Then, for all systems, from your CLI (Terminal, term, iTerm, WSL, ...)
+Then, for all systems, from your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
 ```
   podman machine list     # optional to see there's no default machine
   podman machine init     # one-time step
