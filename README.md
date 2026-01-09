@@ -72,7 +72,7 @@ From your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
   podman machine stop
 ```    
 
-The `workspace` directory is shared between your host OS and the guest Linux OS this process installs. Files you create, modify, or delete are the same both in the VM and on your host OS. That implies you could use a text editor from either environment for editing code files, ad that you can copy files from that directory into an email or Canvas.
+The `workspace` directory is shared between your host OS and the guest Linux OS this process installs. Files you create, modify, or delete are the same both in the VM and on your host OS. That implies you could use a text editor from either environment for editing code files, and that you can copy files from that directory into an email or Canvas.
 
   
 # Clean Up
