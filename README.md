@@ -25,6 +25,14 @@ Install a programmer's text editor
   * Launch WSL
     * Start > "WSL"
 
+    > Windows Users: If you get an error, below, when entering `podman machine init`, try this:
+    > 
+    > sudo apt update
+    > sudo apt install -y qemu-utils qemu-system-x86
+    >
+    > Then repeat the podman machine init command
+
+
 # One-time Setup
 
 Then, for all systems, from your CLI (Terminal, term, iTerm, WSL, ... *not* Powershell)
