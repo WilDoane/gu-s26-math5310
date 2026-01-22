@@ -135,13 +135,15 @@ def evaluate_linear_model(X, y, w, b):
         "R2": r2(y, yhat),
     }
 
-"""
-n — number of observations
-d — number of features (dimensions)
-noise_sd — standard deviation of observational noise
-seed — random number generator seed
-"""
 def make_synthetic_linear(n=1000, d=5, noise_sd=0.5, seed=42):
+    """
+    make_synthetic_linear generates a synthetic linear regression dataset with known true parameters, so you can test whether an optimization algorithm (like SGD) can recover them.
+    
+    n — number of observations
+    d — number of features (dimensions)
+    noise_sd — standard deviation of observational noise
+    seed — random number generator seed
+    """
     rng = np.random.default_rng(seed)
     X = rng.normal(0, 1, size=(n, d)).astype(np.float64)
     w_true = rng.normal(0, 2, size=d).astype(np.float64)
