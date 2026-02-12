@@ -7,7 +7,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
 # Install enterprise self-signed certificate into the container
-
 COPY enterprise-ca.crt /usr/local/share/ca-certificates/enterprise-ca.crt
 RUN update-ca-certificates
 ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
@@ -15,11 +14,15 @@ ENV REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 ENV CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 # OS deps (kept minimal; add more if you need them)
+# - libglib2.0-0: commonly needed by TF / opencv headless wheels
+# - libgomp1: OpenMP runtime (often used by numeric wheels)
 RUN apt-get update && apt-get install -y --no-install-recommends \
       tini \
       git \
       curl \
       ca-certificates \
+      libglib2.0-0 \
+      libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Create an unprivileged user (good default for rootless Podman)
@@ -30,7 +33,7 @@ RUN groupadd -g ${NB_GID} ${NB_USER} \
  && useradd -m -s /bin/bash -u ${NB_UID} -g ${NB_GID} ${NB_USER}
 
 # Install Python packages (CPU-only deep learning stack)
-# - PyTorch CPU wheels are served from the pytorch CPU index.
+# NOTE: tensorflow here is CPU unless you explicitly install GPU-enabled TF and run with GPU libs.
 RUN python -m pip install --upgrade pip \
  && python -m pip install \
       jupyterlab \
@@ -45,7 +48,12 @@ RUN python -m pip install --upgrade pip \
       pillow \
       opencv-python-headless \
  && python -m pip install \
+      tensorflow \
+ && python -m pip install \
       torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# Optional: reduce TF log spam
+ENV TF_CPP_MIN_LOG_LEVEL=2
 
 # Workspace
 WORKDIR /workspace
