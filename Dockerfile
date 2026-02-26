@@ -38,7 +38,7 @@ RUN python -m pip install --upgrade pip \
  && python -m pip install \
       jupyterlab \
       ipykernel \
-      numpy \
+      numpy==1.26.4 \
       pandas \
       scipy \
       scikit-learn \
@@ -47,8 +47,9 @@ RUN python -m pip install --upgrade pip \
       tqdm \
       pillow \
       opencv-python-headless \
+      gensim \
  && python -m pip install \
-      tensorflow \
+      tensorflow==2.15.0 \
  && python -m pip install \
       torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
